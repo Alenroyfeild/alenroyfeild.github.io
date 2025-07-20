@@ -55,25 +55,31 @@
                   {/* Technical Expertise */}
                   <Section title="Technical Expertise" icon={<Wrench size={24} />}>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700">
-                      <SkillCategory title="Languages & Frameworks">
-                        <li>Swift, UIKit, SwiftUI (Basic)</li>
-                        <li>Combine, CoreData, URLSession, JSON</li>
+                      <SkillCategory title="Languages">
+                        <SkillItem name="Swift" badge="https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white" />
+                        <SkillItem name="Kotlin" badge="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
+                        <SkillItem name="Java" badge="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" />
+                        <SkillItem name="SQL" badge="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
                       </SkillCategory>
-                      <SkillCategory title="Architectures & Design">
-                        <li>MVVM, Modular SDK Structure</li>
-                        <li>System Design Principles</li>
+                      <SkillCategory title="iOS Ecosystem">
+                        <SkillItem name="UIKit" badge="https://img.shields.io/badge/UIKit-000000?style=for-the-badge&logo=apple&logoColor=white" />
+                        <SkillItem name="SwiftUI" badge="https://img.shields.io/badge/SwiftUI-000000?style=for-the-badge&logo=apple&logoColor=white" />
+                        <SkillItem name="Combine" badge="https://img.shields.io/badge/Combine-000000?style=for-the-badge&logo=apple&logoColor=white" />
+                        <SkillItem name="CoreData" badge="https://img.shields.io/badge/CoreData-000000?style=for-the-badge&logo=apple&logoColor=white" />
+                        <SkillItem name="URLSession" badge="https://img.shields.io/badge/URLSession-000000?style=for-the-badge&logo=apple&logoColor=white" />
+                        <SkillItem name="NotificationCenter" badge="https://img.shields.io/badge/NotificationCenter-000000?style=for-the-badge&logo=apple&logoColor=white" />
+                        <SkillItem name="Core Animation" badge="https://img.shields.io/badge/Core%20Animation-000000?style=for-the-badge&logo=apple&logoColor=white" />
                       </SkillCategory>
-                      <SkillCategory title="Key Concepts & APIs">
-                        <li>Real-time Communication (PubSub)</li>
-                        <li>Encryption (File, Payload, SQLite DB)</li>
-                        <li>Swift Concurrency, Performance Optimization</li>
-                        <li>Apple Translation API, Sensitive Content Analysis</li>
-                        <li>MDM Compatibility, Dynamic UI Rendering</li>
+                      <SkillCategory title="Architecture & Patterns">
+                        <SkillItem name="MVVM" badge="https://img.shields.io/badge/MVVM-blue?style=for-the-badge" />
+                        <SkillItem name="Modular SDK Design" badge="https://img.shields.io/badge/Modular%20SDK-green?style=for-the-badge" />
+                        <SkillItem name="PubSub" badge="https://img.shields.io/badge/PubSub-orange?style=for-the-badge" />
                       </SkillCategory>
-                      <SkillCategory title="Tools & Methodologies">
-                        <li>Xcode, Git</li>
-                        <li>Full Lifecycle Ownership</li>
-                        <li>Client Integration & Support</li>
+                      <SkillCategory title="Tools">
+                        <SkillItem name="Xcode" badge="https://img.shields.io/badge/Xcode-147EFB?style=for-the-badge&logo=xcode&logoColor=white" />
+                        <SkillItem name="Git" badge="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+                        <SkillItem name="Postman" badge="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+                        <SkillItem name="Figma" badge="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
                       </SkillCategory>
                     </div>
                   </Section>
@@ -186,6 +192,13 @@
           </div>
         );
 
+        // SkillItem Component for displaying name and badge
+        const SkillItem = ({ name, badge }) => (
+          <li className="flex items-center gap-2">
+            <strong>{name}</strong> <img src={badge} alt={name} className="h-4" />
+          </li>
+        );
+
         // Reusable Project Card Component
         const ProjectCard = ({ title, role, description, points }) => (
           <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -222,7 +235,7 @@
           <div>
             <h3 className="text-xl font-semibold text-gray-800">{degree}</h3>
             <p className="text-gray-600 text-base mb-1">{university}, {location}</p>
-            <p class="text-gray-500 text-sm mb-1">Graduation Year: {year} | CGPA: {cgpa}</p>
+            <p className="text-gray-500 text-sm mb-1">Graduation Year: {year} | CGPA: {cgpa}</p>
             {otherNotes && <p className="text-sm text-gray-600">{otherNotes}</p>}
           </div>
         );
